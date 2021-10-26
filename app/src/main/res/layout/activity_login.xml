@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context=".ui.login.LoginActivity">
+
+    <TextView
+        android:id="@+id/tvLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/tvLogin_marginTop"
+        android:layout_marginBottom="@dimen/tvLogin_marginBottom"
+        android:text="@string/tvLogin_txt"
+        android:textSize="40sp"
+        android:fontFamily="@font/minecraftia"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimary" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilUser"
+        app:errorEnabled="true"
+        style="@style/InventoriTextInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/til_margin">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tieUser"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/tieUser" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!--Modos prefecinido para contraseña con endIconMode se ve el ojo para la contraseña,
+     y tipos de formato para el input-->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilPassword"
+        app:errorEnabled="true"
+        style="@style/InventoriTextInputLayout"
+        app:endIconMode="password_toggle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/til_margin">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tiePassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:hint="@string/tiePassword" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/cbRecuerdame"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.8"
+            android:text="@string/cbRecuerdame_txt" />
+
+        <!--Puedes definir un estilo dentro de android que te guste más-->
+        <Button
+            android:id="@+id/btnRegistrar"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:textColor="@color/colorOnSecondary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.2"
+            android:text="@string/btnRegistrar" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/login"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:backgroundTint="@color/colorSecondary"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:text="@string/btnLogin" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_weight="1"
+        android:textStyle="bold"
+        android:gravity="bottom|center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="bottom|center_horizontal"
+        android:text="@string/tvPlataformas" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/imgBtnGoogle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            app:srcCompat="@drawable/google" />
+        <ImageButton
+            android:id="@+id/imgBtnFacebook"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            app:srcCompat="@drawable/facebook" />
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="64dp"
+        android:layout_marginBottom="64dp"
+        android:visibility="gone" />
+
+</LinearLayout>
